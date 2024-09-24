@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 # Create a wrapper script to run main.py as root
-echo '#!/bin/bash\nexec python3 /app/Redpie/src/main.py "$@"' > /app/redpie.sh
+echo '#!/bin/bash\nexec python3 /home/redpie/app/Redpie/src/main.py "$@"' > /app/redpie.sh
 
 # Make the wrapper executable
 chmod +x /app/redpie.sh
@@ -13,4 +13,4 @@ chown root:root /app/redpie.sh
 chmod u+s /app/redpie.sh
 
 # Ensure flag.txt is not readable by any user except root
-chmod 600 /app/flag.txt
+chmod 600 /root/flag.txt
