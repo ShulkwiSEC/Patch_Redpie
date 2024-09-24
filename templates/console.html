@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %} Contact Us {% endblock %}
+{% block content %}
+<style>
+    .output{
+        padding: 10px;
+        background-color: black;
+        color: white;
+        width: 100%;
+        text-wrap: wrap;
+        font-size: 20px;
+        font-weight: 600;
+    }
+</style>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+<div class="content" style="margin: 200px;">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <h1 style="font-weight: 800; font-size: larger;">Use Our Console ..!</h1>
+    <p>
+        If you have any questions, feel free to reach out!
+    </p>
+    <form action="/admin/debugme/console" method="post">
+        <label for="message">!!: </label>
+        <textarea id="me" name="me" cols="50" rows="30" required></textarea>
+        
+        <button type="submit">Submit</button>
+    </form>
+    {%if msg%}
+    <div class="output"><span>{{msg}}</span></div>
+    {%endif%}
+</div>
+{% endblock %}
