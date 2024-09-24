@@ -11,12 +11,12 @@ RUN apt-get update && apt-get install -y python3 python3-pip curl
 WORKDIR /app
 
 # Copy all necessary files to the working directory
-COPY app.py .
-COPY README.md .
-COPY requirements.txt .
-COPY setup.sh .
-COPY templates .
-COPY RedPie ./Redpie
+COPY app.py ./
+COPY README.md ./
+COPY requirements.txt ./
+COPY setup.sh ./
+COPY templates ./templates/
+COPY RedPie ./RedPie/
 
 # Copy the setup script
 COPY setup.sh .
